@@ -2,13 +2,15 @@ import tkinter as tk
 from tkinter import Scrollbar, Text
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
 
 #Tokens or lexical units are the smallest fractions in the python programme. 
 # A token is a set of one or more characters having a meaning together
 # to make a project -> documentation is very important.
 # text is the ques.
 
-
+def conf():
+    load_dotenv()
 
 
 #########   send and receive 
@@ -21,7 +23,7 @@ def send_message():
         user_input.delete("1.0", tk.END)
         try:
             
-            genai.configure(api_key="AIzaSyDbYFrawCr3lA-Nn2ubnf6sRi77HdJS4CM")
+            genai.configure(api_key=os.getenv("api_key")
 
 
             generation_cofig = {"temperature": 0.9, "top_p":1, "top_k":1, "max_output_tokens": 2048}
@@ -68,4 +70,5 @@ def create_chat_gui():
 
 
 if __name__ == "__main__":
+    load_dotenv()
     create_chat_gui()
