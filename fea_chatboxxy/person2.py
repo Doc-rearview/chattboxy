@@ -16,7 +16,7 @@ import threading
 
 def person2_gui(client):
     root = tk.Tk()
-    root.title("Person 2 - Chat App")
+    root.title("Person 2 - Chatboxxy")
     root.configure(bg="black")
 
     chat_frame = tk.Frame(root, bg="black")
